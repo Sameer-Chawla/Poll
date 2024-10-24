@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link'; // Import Link for navigation
 
 type PollOption = {
   optionText: string;
@@ -37,6 +38,12 @@ export default function PollPage() {
   return (
     <div className="container">
       <h1>Take a Poll</h1>
+
+      {/* Button to navigate to Admin panel */}
+      <Link href="/admin">
+        <button className="button">Go to Admin Panel</button>
+      </Link>
+
       {!selectedPoll ? (
         <div>
           {mockPolls.map((poll, index) => (
